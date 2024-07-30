@@ -1,0 +1,18 @@
+body {
+    background-image: url(../images/transmission-bg.jpg);
+    background-size: 100% 100vh;
+    color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+.container {
+    text-align: center;
+}
+.form {
+    display: inline-block;
+    text-align: left;
+}

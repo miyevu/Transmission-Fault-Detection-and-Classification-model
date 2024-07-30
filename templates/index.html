@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fault Detection</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Fault Detection in Transmission Line</h1>
+            <div class="form">
+                <form method="POST" action="/predict">
+                    <label for="Ia">Current Ia:</label>
+                    <input type="text" id="Ia" name="Ia"><br>
+                    <label for="Ib">Current Ib:</label>
+                    <input type="text" id="Ib" name="Ib"><br>
+                    <label for="Ic">Current Ic:</label>
+                    <input type="text" id="Ic" name="Ic"><br>
+                    <label for="Va">Voltage Va:</label>
+                    <input type="text" id="Va" name="Va"><br>
+                    <label for="Vb">Voltage Vb:</label>
+                    <input type="text" id="Vb" name="Vb"><br>
+                    <label for="Vc">Voltage Vc:</label>
+                    <input type="text" id="Vc" name="Vc"><br>
+                    <button type="submit">Detect Fault</button>
+                </form>
+            </div>
+            {% if fault_detected is not none %}
+            <div id="result">
+                Fault Detected: {{ fault_detected }}<br>
+                Fault Type: {{ fault_type }}
+            </div>
+            {% endif %}
+        </div>
+    </body>
+</html>
